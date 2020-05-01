@@ -42,7 +42,30 @@
         <input v-model="message">
     </div>
 
+    <div id="app-7">
+        <ol>
+            <!-- 
+                now we provide eah todo item with the todo object
+                it s representing , so that its content can be dynamic.
+                we also need to provie key for each component
+             -->
+             <todo-item
+             v-for="item in groceryList"
+             v-bind:todo="item"
+             v-bind:key="item.id"
+             ></todo-item>
+        </ol>
+    </div>
+
 
     <script src="main.js"></script>
 </body>
 </html>
+<!-- in an bigger projecs components will be likwise
+<div id="app">
+    <app-nav></app-nav>
+    <app-view>
+      <app-sidebar></app-sidebar>
+      <app-content></app-content>
+    </app-view>
+  </div> -->
