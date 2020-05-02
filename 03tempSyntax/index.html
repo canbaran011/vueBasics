@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+/* text*/
+<span> Message {{ msg }}</span>
+// use v-once attr for do not update things
+
+/* raw html*/
+// double mustaches interprets the data as plain text not raw html 
+// for html use v-html attribute
+<p> use v-html directive: <span v-html="rawhtml"></span> </p>
+
+/*attribute */
+// mustaches cannot be used inside html attr instead use a v-bind directives
+<div v-bind="id"></div>
+// boolean attr works a liitle difference v-bind
+<button v-bind:disabled='isButtondisabled'>Button</button>
+
+/* Using JS Expressions */
+{{ number + 1 }} {{ OK ? 'YES' : 'NO' }}
+{{ message.split('').reverse().join('') }}
+<div v-bind:id="'list-' + id" ></div>
+//Template expressions are sandboxed and only have access to a whitelist of globals such as Math and Date. You should not attempt to access user defined globals in template expressions.
+
+/* Directives */
+// directives are special with the v- prefix 
+// can be a single js expression ( v-for) 
+// job is apply the side effects to the DOM when the value of its expression changes
+<p v-if='seen'>Now you see me</p>
+
+/* Arguments */
+// some directives can take an argument for example v-bind 
+<a v-bind:href="">...link</a>
+//another example is v-on which listens te dom events
+<a v-on:click='doSomething'>...anotherLink</a>
+
+/* Dynamic Arguments */
+//new in 2.6
+it is also possible to use a JavaScript expression in a
+// directive argument by wrapping it with square brackets:
+<a v-bind:[attributeName]="url"> ... </a>
+//For example, if your Vue instance has a data property, attributeName
+//, whose value is "href", then this binding will be equivalent to v-bind:href.
+<a v-on:[eventName]="doSomething"> ... </a>
+
+/* Modifiers */
+// modifiers are spec postfices denoted by dot
+//For example, the .prevent modifier tells the v-on directive to call
+// event.preventDefault() on the triggered event:
+<form v-on:submit.prevent='onSubmit'></form>
+//see other examples of modifiers later, for v-on and for v-model, when we explore
+
+/* Shorthands */
+ // # v-bind Shorthand
+<!-- full syntax -->
+<a v-bind:href=""></a>
+
+<!-- shorthand -->
+<a :href=""></a>
+
+<!-- shorthand w dyn argument -->
+<a :key=""></a>
+
+// # v-on Shorthand
+<!-- fullsyntax -->
+<a v-on:click='doSomething'></a>
+
+<!-- shorthand -->
+<a @click='doSomething' ></a>
+
+<!-- sh w arguments -->
+<a @[event]='doSomething'></a>
+
+
+
+
+
+
+
+    
+<script src="main.js"></script>
+</body>
+</html>
