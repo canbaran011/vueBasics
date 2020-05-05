@@ -7,18 +7,39 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-
+// computed props and watchers ...
 <!-- dont use complex things like that  -->
 <div id="example">
     {{ message.split('').reverse().join('') }}
   </div>
 
   <!-- use this -->
-// Basic example
+// #Basic example
 <div id="example">
     <p>Original message: "{{ message }}"</p>
     <p>Computed reversed message: "{{ reversedMessage }}"</p>
   </div>
+
+// #Computed Caching vs Methods
+// can achieve sameresult invoking metd on exp;;;
+<p> Reversed Message: "{{ reversedMessage() }}" </p>
+// in component
+<!-- methods:{
+    reversedMessage: function (){
+        return this.message.split('').reverse().join('')
+    }
+} -->
+
+
+
+
+
+
+
+
+
+
+
 
 
     
