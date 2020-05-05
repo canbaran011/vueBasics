@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>10vue</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app1">
+  <h1> {{title}} </h1>
+  <button @click="show" ref="myButton">
+    Paragrafi Goster
+  </button>
+  <p v-if="showPar">
+    Cant see EveryTime !
+  </p>
+  <hello></hello>
+  <hello></hello>
+</div>
+
+<div id="app2">
+  <h1> {{title}} </h1>
+   <button @click=degistir>
+     degistir title 1 i
+   </button>
+</div>
+
+<div id="app3">
+</div>
+
+
+
+
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+
+Vue.component('hello',{
+template: "<h2>COmpOnent</h2>"
+})
+
+var vm1 = new Vue({
+  el: "#app1",
+  data: {
+    title: "VueJs INstance",
+    showPar: false
+  },
+  methods: { 
+    show: function() {
+      this.showPar = true
+      alert("Degistirilmis Instance")
+      this.title = "degistirilen instance";
+      this.$refs.myButton.innerText = "Test"
+    }
+  },
+  watch:{
+  title: function(value){
+  	alert()
+  }
+  }
+})
+
+/* arada bir yer basi*/
+/* setTimeout(function(){
+vm1.title = " hasstr ya vue js ne guzel"
+vm1.show();
+},2000) */
+/* arada bir yer sonu */
+
+vm1.newProp = "newly created";
+console.log(vm1.$data.title);
+
+var vm2 = new Vue({
+  el: "#app2",
+  data: {
+    title: "VueJS Instance2"
+  },
+  methods: {
+    degistir: function() {
+			vm1.title= "2den selamlar"
+    }
+  }
+})
+
+var vm3 = new Vue({
+el: "#app3",
+template: "<h1>VM3den merhabalar </h1>"
+
+})
+
+
+/* vm3.$mount("#app3")
+ *//* string template kullandik ilerde file template kulanacagiz */
+
+/* console.log(vm3);
+ */
+/* document.getElementById('app3').appendChild(vm3.$el); */
+
+
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "ptj3scx2"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>

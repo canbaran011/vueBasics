@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>01vueJS</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="//unpkg.com/vue"></script>
+
+  <script
+    type="text/javascript"
+    src="//vuejs.org/js/vue.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- <div id="asdas">
+  <h1>{{title}}</h1>
+   <p> {{hello()}} <a v-bind:href="link"> link </a> </p>
+   <p></p>
+</div> -->
+
+<div id="app1">
+  <h2> {{title}} </h2>
+  <h2>  {{message}} </h2>
+  <p>
+    {{hello() }}<a v-bind:href="link"></a>
+  </p>
+  <p v-html="blogLink"></p>
+
+
+
+</div>
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+
+ new Vue({
+  el: '#app1',
+  data: {
+    title: 'Selamlar',
+    message: 'mesajin var',
+    link: 'https://example.com',
+    blogLink: "<a href='https://exampleblog.com'>BlogLink</a>"
+  },
+  methods: {
+    hello: function() {
+      this.title = "selamlar bro";
+      return this.title; //kardes sea
+    }
+  }
+
+})
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "ngLo4ctr"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>

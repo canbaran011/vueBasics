@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>09vue</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+
+  <ul>
+    <li v-for='person in persons'>
+      <ul>
+        <li v-for='(item , key ,index) in person'> <b>{{key}}</b> : {{item}} {{index}} </li>
+      </ul>
+    </li>
+  </ul>
+<hr>
+
+  <ul>
+    <li v-for="(product ,index) in products" :key="product" >{{index}} - {{product}} </li>
+  </ul>
+<button @click="products.push('Drone')">Ekle</button>
+<hr>
+  <div v-for="(product ,index) in products">
+    <h3> {{product}} </h3>
+    <p> {{index}} </p>
+  </div>
+  <hr>
+  <span v-for=" i in 5"> {{i}} </span>
+  
+  <!--     <template v-for="(product ,index) in products">
+    <h3> {{product}} </h3>
+    <p> {{index}} </p>
+      </template> 
+      -->
+
+
+
+</div>
+
+
+<!-- template vuejs tarafindan render edilmez -->
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+
+new Vue({
+  el: "#app",
+  data: {
+    products: ["Monitor", "Klavye", "Aski", "Masa"],
+    persons: [{
+        name: "Can Baran",
+        email: "sample@mail.com"
+      },
+      {
+        name: "Patarone",
+        email: "Patarone@mail.com"
+      },
+      {
+        name: "Marzetti",
+        email: "mazerot@mail.com"
+      },
+      {
+        name: "Ciovanni",
+        email: "Ciovanne@mail.com"
+      }
+    ]
+  }
+
+})
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "3edLom2y"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>

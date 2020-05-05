@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>06vue</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      .box{
+ width:100px;
+ background-color:red;
+ height:100px;
+ display:inline-block;
+ margin-right: 5px;
+}
+.yellow{
+  background-color:yellow;
+}
+.blue{
+  background-color:blue;
+}
+.green{
+    background-color:green;
+}
+  </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <div 
+    
+  @click="attachedClass = !attachedClass"
+  :class="divClass" 
+  class="box"></div>
+  <div :class="{ yellow : attachedClass}"  class="box"></div>
+  <div class="box" :class="[color,{ yellow : attachedClass} ]" ></div>
+  <hr>
+  <input type="text" v-model="color">
+</div>
+<!-- divClass yerine bu olabilir ... -->
+<!-- yellow : attachedClass , blue : !attachedClass -->
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+
+new Vue({
+  el: "#app",
+  data: {
+  	color : "green",
+    attachedClass: false
+  },
+  computed: {
+    divClass: function() {
+      return {
+				yellow : this.attachedClass,
+        blue : !this.attachedClass
+      }
+    }
+  }
+})
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "a2jfqs7k"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>

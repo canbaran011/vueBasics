@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>07vue</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      .box{
+ width:100px;
+ background-color:red;
+ height:100px;
+ display:inline-block;
+ margin-right: 5px;
+}
+.green{
+  background-color: green;
+}
+
+
+.blue{
+  background-color: blue;
+}
+  </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <div class="box" :style="{backgroundColor :renk}"></div>
+  <div class="box" :style="customStyle"></div>
+  <div class="box" :style="[customStyle , {width : yukseklik + 'px'}]"></div>
+  <input type="text" v-model="renk">
+  <input type="text" v-model="yukseklik">
+</div>
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+
+new Vue({
+  el: "#app",
+  data: {
+    renk: "green",
+    yukseklik: 100
+  },
+  computed: {
+    customStyle: function() {
+      return {
+        backgroundColor: this.renk,
+        height :this.yukseklik+"px"
+      }
+    }
+  }
+})
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "fgy7e6mj"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>

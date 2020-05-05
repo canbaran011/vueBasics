@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>08vue</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+ <button @click="show = !show">Goster /Gizle</button>
+  <p v-if="show"> You can see me </p>
+  <p v-else> Can U see me? </p>
+ 
+  <p v-if="sayi < 10"  >Sayi 10 dan kucuktur</p>
+  <p v-else-if="sayi > 10"  >Sayi 10 dan buyuktur</p>
+  <p v-else  >Sayi 10 a esittir</p>
+  
+  <button @click="showPar = !showPar">Goster/Gizle</button>
+  <p v-show="showPar">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure necessitatibus amet, eaque debitis illum? Repellat.</p>
+
+</div>
+
+<!-- show display none yapar -->
+<!-- v-if remove eder. -->
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+
+new Vue({
+el: "#app",
+data: {
+	show:false,
+  sayi: 25,
+  showPar:false
+}
+})
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "xm2dpoqc"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>

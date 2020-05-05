@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>02vue</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="//unpkg.com/vue"></script>
+
+  <script
+    type="text/javascript"
+    src="/js/lib/dummy.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+  <button v-on:click="showAlert('canbaran')">
+    Alert
+  </button>
+  <button v-on:click='counter++'>
+    Artir
+  </button>
+  <button v-on:click="counter+=2">
+    artir 2
+  </button>
+  <button v-on:click='decrease(2 , $event)'>
+    Azalt
+  </button>
+  <p>
+    {{ counter > 10 ? 'counter 10dan buyuk ' : ' 10 dan kucuk'  }}
+  </p>
+  <p>
+    {{ (counter * 9 / 2) }}
+  </p>
+  <p> COUNTER = {{counter}} </p>
+  <p>Coordinates </p>
+  <p v-on:mousemove='updatecords( 2 , $event)'> x= {{x}} y= {{y}}
+  <span v-on:mousemove.stop> GIZLI BOLME </span>
+  </p>
+  <input v-on:keyup.enter.space="showAlert2" type="text">
+</div>
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+
+new Vue({
+  el: '#app',
+  data: {
+    counter: 0,
+    x: 0,
+    y: 0
+  },
+  methods: {
+    showAlert: function(name) {
+      alert(name);
+    },
+    decrease: function(step) {
+      this.counter -= step;
+    },
+    updatecords: function(step, event) {
+      this.counter += step;
+      this.x = event.clientX;
+      this.y = event.clientY;
+    },
+    showAlert2 : function(event){
+    alert(event.target.value);
+    }
+  }
+})
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "h2btesdy"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>

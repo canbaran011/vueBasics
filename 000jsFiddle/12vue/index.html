@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>12vue</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+<comp></comp>
+</div>
+<hr>
+<div id="app2">
+<comp></comp>
+
+</div>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">//<![CDATA[
+
+
+/* disarda data tanimi iki comp u da etkiler ...
+bu nedenle data tanimimizi component icinde yapmaliyiz 
+*/
+/* var data = {
+  status : "Pasif"
+} */
+
+/* Vue.component('comp', {
+  data: function() {
+    return {
+      status: "pasif"
+    }
+  },
+  template: '<p> sunucu durumu :	{{status}} <button	@click="changeStatus" >Change</button></p>',
+  methods: {
+    changeStatus: function() {
+      this.status = "aktif"
+    }
+  }
+})
+ */
+var cmp = {
+  data: function() {
+    return {
+      status: "pasif"
+    }
+  },
+  template: '<p> sunucu durumu :	{{status}} <button	@click="changeStatus" >Change</button></p>',
+  methods: {
+    changeStatus: function() {
+      this.status = "aktif"
+    }
+  }
+}
+
+new Vue({
+  el: '#app',
+/*	bu sekilde bu cmp componentini sadece #app icinde calistirmis olduk */
+components :{
+  	"comp": cmp
+  }
+
+})
+
+new Vue({
+  el: '#app2'
+})
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "rvtz04c5"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>
